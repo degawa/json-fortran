@@ -262,7 +262,7 @@ if ( NOT SKIP_DOC_GEN )
       if ( USE_GNU_INSTALL_CONVENTION )
 	install ( DIRECTORY "${DOC_DIR}/" DESTINATION "${CMAKE_INSTALL_DOCDIR}" )
       else ()
-	install ( DIRECTORY "${DOC_DIR}/" DESTINATION "${CMAKE_INSTALL_PREFIX}/${PACKAGE_VERSION}/doc" )
+	install ( DIRECTORY "${DOC_DIR}/" DESTINATION "${PROJECT_SOURCE_DIR}/api-doc" )
       endif ()
     endif ()
   else () # Not found
