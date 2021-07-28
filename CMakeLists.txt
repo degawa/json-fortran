@@ -119,8 +119,8 @@ if (USE_GNU_INSTALL_CONVENTION)
   set( ABS_LIB_INSTALL_DIR "\${CMAKE_INSTALL_FULL_LIBDIR}" )
 else ()
   # Most of this could be 'wrong' for Windows/Cygwin
-  set ( INSTALL_MOD_DIR    "${PACKAGE_VERSION}/lib" )
-  set ( INSTALL_LIB_DIR    "${INSTALL_MOD_DIR}" )
+  set ( INSTALL_MOD_DIR    "include" )
+  set ( INSTALL_LIB_DIR    "lib" )
   set( ABS_LIB_INSTALL_DIR "\${CMAKE_INSTALL_PREFIX}/${INSTALL_LIB_DIR}" )
 endif ()
 
