@@ -200,7 +200,7 @@ set_target_properties ( ${LIB_NAME}
 #-------------------------------------
 # Build the documentation with FORD
 #-------------------------------------
-set ( SKIP_DOC_GEN FALSE CACHE BOOL
+set ( SKIP_DOC_GEN TRUE CACHE BOOL
   "Disable building the API documentation with FORD" )
 if ( NOT SKIP_DOC_GEN )
   find_program ( FORD ford )
