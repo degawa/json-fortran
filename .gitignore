@@ -3,7 +3,7 @@ lib/
 builds/
 build/
 install/
-doc/
+api-doc/
 .vscode/
 
 *.gcov
