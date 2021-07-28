@@ -124,6 +124,20 @@ else ()
   set( ABS_LIB_INSTALL_DIR "\${CMAKE_INSTALL_PREFIX}/${INSTALL_LIB_DIR}" )
 endif ()
 
+if(CMAKE_Fortran_COMPILER_ID MATCHES GNU OR Fortran_COMPILER_NAME MATCHES "gfortran*")
+    set(COMPILER_ID gnu)
+endif()
+if(CMAKE_Fortran_COMPILER_ID MATCHES Intel OR Fortran_COMPILER_NAME MATCHES "ifort*")
+    set(COMPILER_ID intel)
+endif()
+OPTION(${PROJECT_NAME}_ENABLE_INSTALL_SUBDIR "Add compiler ID as a subdirectory to the install prefix" OFF)
+
+if(${${PROJECT_NAME}_ENABLE_INSTALL_SUBDIR})
+    set(INSTALL_MOD_DIR ${INSTALL_MOD_DIR}/${COMPILER_ID})
+    set(INSTALL_LIB_DIR ${INSTALL_LIB_DIR}/${COMPILER_ID})
+    message("**A subdirectory ${COMPILER_ID} is added to the install prefix**")
+endif()
+
 
 # Put package export CMake files where they can be found
 # use `find_package ( jsonfortran-${CMAKE_Fortran_COMPILER_ID} <version> REQUIRED )`
